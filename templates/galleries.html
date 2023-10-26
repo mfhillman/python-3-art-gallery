@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% set header = True %}
+{% set footer = True %}
+{% set title_extension = pool_title %}
+
+{% block content %}
+  <DIV ALIGN="center">
+    <CENTER>
+      <TABLE WIDTH="527" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+        <TR><TD COLSPAN="2">
+          <p ALIGN="center">
+            <FONT SIZE="+2" FACE="Arial, Helvetica, sans-serif"> Picture Galleries</FONT><BR>
+            <FONT SIZE="+1" FACE="Arial, Helvetica, sans-serif">To visit a gallery, click on the gallery title or the sample painting. </FONT>
+          </p>
+          <P>&nbsp;</P>
+          <DIV ALIGN="center"><CENTER>
+            <TABLE WIDTH="527" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+              <TR><TD>
+                <FONT SIZE="+1" FACE="Arial, Helvetica, sans-serif">
+                  {% for pair in gallery_front_pairs %}
+                    <P ALIGN="center">
+                      <A HREF="/{{pool_name}}/{{pair[0].url_fragment()}}">
+                        <B>{{pair[0].name}}</B>
+                      </A>
+                    </P>
+                    <P ALIGN="center">
+                      <A HREF="/{{pool_name}}/{{pair[0].url_fragment()}}">
+                        <IMG SRC="{{pair[1].thumbnail_image()}}" BORDER="0"/>
+                      </A>
+                      <BR>
+                    </P>
+                    <P>&nbsp;</P>
+                  {% endfor %} 
+                </FONT>
+              </TD></TR>
+            </TABLE>
+          </CENTER></DIV>
+          {% if pool_name == 'archives' %}
+            <P ALIGN="CENTER"><FONT SIZE="2" FACE="Arial, Helvetica, sans-serif">
+              Go back to the current <A HREF="galleries">galleries</A>.
+            </FONT></P>
+          {% else %}
+            <P ALIGN="CENTER"><FONT SIZE="2" FACE="Arial, Helvetica, sans-serif">
+              More galleries are available in the <A HREF="archives">archives</A>.
+            </FONT></P>
+          {% endif %}
+          <P ALIGN="CENTER"><FONT SIZE="2" FACE="Arial, Helvetica, sans-serif">
+            ALL IMAGES COPYRIGHT {{year}} BY TIM MURLEY
+          </FONT></P>
+          <P ALIGN="CENTER"><FONT SIZE="2" FACE="Arial, Helvetica, sans-serif">
+            Please note that the color intensity and value viewed on this web page
+            may not translate fully from the original artwork.
+          </FONT></P>
+          <BR>
+        </TD></TR>
+      </TABLE>
+    </CENTER>
+  </DIV>
+{% endblock %}

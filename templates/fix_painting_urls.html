@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fix PaintingUrls: {{start}}</title>
+    {% if redirect %}
+      <meta http-equiv="refresh" content="3;url={{redirect}}" />
+    {% endif %}
+</head>
+<body>
+  {% for painting in paintings %}
+    {{painting.title}}&nbsp{{painting.url_fragment()}}&nbsp{{painting.base_image_url}}<BR>
+  {% endfor %}
+</body>
+</html>

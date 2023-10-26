@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% set header = True %}
+{% set footer = True %}
+{% set lefticon = 'propagandastarsicon' %}
+{% set righticon = 'newstars' %}
+{% set title_extension = 'Resumé' %}
+
+{% block content %}
+  <div align="center"><center>
+    <table WIDTH="527" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+      <tr>
+        <td COLSPAN="2"><p align="center"><font face="Arial, Helvetica, sans-serif" size="+2">TIM MURLEY</font><br></p>
+          <p align="center"><font size="+1" face="Arial, Helvetica, sans-serif">
+            Commissions available. Please inquire.<br><br>
+            Web: <a href="http://www.timmurley.com">www.timmurley.com</a><br>
+            Email: <a href="mailto:timmurleyart@gmail.com">timmurleyart@gmail.com</a><br>
+            Facebook Artist Page: <a href="http://www.facebook.com/pages/Tim-murley/464611656904146">Tim Murley</a><br>
+          </font></p>
+        </td>
+      </tr>
+    </table>
+          
+    <div>
+      <a class = "smicon" href="https://twitter.com/timmurleyart">
+        <img title="Twitter" alt="Twitter" src="https://socialmediawidgets.files.wordpress.com/2014/03/01_twitter.png" width="35" height="35" />
+      </a>
+      <a class = "smicon" href="https://www.instagram.com/timmurleyart">
+        <img title="Instagram" alt="Instagram" src="https://socialmediawidgets.files.wordpress.com/2014/03/10_instagram.png" width="35" height="35" />
+      </a>
+      <a class = "smicon" href="https://www.facebook.com/timmurleyart">
+        <img title="Facebook" alt="Facebook" src="https://socialmediawidgets.files.wordpress.com/2014/03/02_facebook.png" width="35" height="35" />
+      </a>
+      <a class = "smicon" href="https://www.pinterest.com/timmurleyart">
+        <img title="Pinterest" alt="Pinterest" src="https://socialmediawidgets.files.wordpress.com/2014/03/13_pinterest.png" width="35" height="35" />
+      </a>
+      <a class = "smicon" href="https://timmurleyart.tumblr.com">
+        <img title="Tumblr" alt="Tumblr" src="https://socialmediawidgets.files.wordpress.com/2014/03/15_tumblr.png" width="35" height="35" />
+      </a>
+    </div>
+          
+  </center></div>
+  <div align="center"><center>
+    <table WIDTH="500" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+      <TBODY>
+        <tr>
+          <td WIDTH="100%" HEIGHT="17"><font size="+2" face="Arial, Helvetica, sans-serif">
+            <br><b>EXHIBITIONS:</b>
+          </font></td>
+        </tr>
+        <tr>
+          <td WIDTH="100%">
+            <blockquote>
+              <div>
+                <div class="RTE">
+                  {% for exhibition in exhibitions %}
+                    {{exhibition}}<br /><br />
+                  {% endfor %}
+
+                </div>
+              </div>
+            </blockquote>
+          </td>
+        </tr>
+        <tr>
+          <td WIDTH="100%" HEIGHT="17"><font size="+2" face="Arial, Helvetica, sans-serif">
+            <br><b>HONORS:</b>
+          </font></td>
+        </tr>
+        <tr>
+          <td WIDTH="100%" HEIGHT="17">
+            <blockquote>
+              {% for honor in honors %}
+                <p>{{honor}}</p>
+              {% endfor %}
+
+            </blockquote>
+          </td>
+        </tr>
+        <tr>
+          <td WIDTH="100%" HEIGHT="17"><font size="+2" face="Arial, Helvetica, sans-serif">
+            <br><b>EDUCATION:</b>
+          </font></td>
+        </tr>
+        <tr>
+          <td WIDTH="100%">
+            <blockquote>
+              {% for school in schools %}
+                <p><b>{{school.school}}</b></p>
+                {%if school.school_detail %}
+                  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{school.school_detail}}</p>
+                {% endif %}
+              {% endfor %}
+            </blockquote>
+          </td>
+        </tr>
+      </TBODY>
+    </table>
+  </center></div>
+{% endblock %}

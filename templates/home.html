@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% set header = True %}
+
+{% block headerstuff %}
+	<meta name="description" content="The Art of Tim Murley"/>
+	<meta name="distribution" content="global"/>
+	<meta name="keywords" content="art, fine art, children's art, gallery, massachusetts, boston, painting, university, graphic, design, movies, color, artist, museum, haring, basquiat, warhol, monet, music, murley, moby, carle"/>
+{% endblock %} 
+
+{% block content %}
+	<p ALIGN="center">
+		<A HREF="galleries"><IMG src="{{painting.full_size_image()}}" BORDER="0"></A>
+	</p>
+ <div><center>
+    <a class = "smicon" href="https://twitter.com/timmurleyart">
+      <img title="Twitter" alt="Twitter" src="https://socialmediawidgets.files.wordpress.com/2014/03/01_twitter.png" width="35" height="35" />
+    </a>
+    <a class = "smicon" href="https://www.instagram.com/timmurleyart">
+      <img title="Instagram" alt="Instagram" src="https://socialmediawidgets.files.wordpress.com/2014/03/10_instagram.png" width="35" height="35" />
+    </a>
+    <a class = "smicon" href="https://www.facebook.com/timmurleyart">
+      <img title="Facebook" alt="Facebook" src="https://socialmediawidgets.files.wordpress.com/2014/03/02_facebook.png" width="35" height="35" />
+    </a>
+    <a class = "smicon" href="https://www.pinterest.com/timmurleyart">
+      <img title="Pinterest" alt="Pinterest" src="https://socialmediawidgets.files.wordpress.com/2014/03/13_pinterest.png" width="35" height="35" />
+    </a>
+    <a class = "smicon" href="https://timmurleyart.tumblr.com">
+      <img title="Tumblr" alt="Tumblr" src="https://socialmediawidgets.files.wordpress.com/2014/03/15_tumblr.png" width="35" height="35" />
+    </a>
+  </center></div>
+	<P ALIGN="CENTER"><FONT SIZE="1" FACE="Arial, Helvetica, sans-serif">
+  		ALL IMAGES COPYRIGHT 1998-{{year}} BY TIM MURLEY</FONT></P>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% set header = True %}
+{% set footer = True %}
+{% set title_extension = gallery.name %}
+
+{% block content %}
+  <DIV ALIGN="center">
+    <CENTER>
+      <TABLE WIDTH="527" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+        <TR><TD COLSPAN="2">
+          <p ALIGN="center">
+            <FONT SIZE="+2" FACE="Arial, Helvetica, sans-serif">{{gallery.name}}</FONT><BR>
+            <FONT SIZE="+1" FACE="Arial, Helvetica, sans-serif">
+              If you would like to see an enlarged image, click on the title of each painting.
+            </FONT>
+          </P>
+          <P>&nbsp;</P>
+          <DIV ALIGN="center"><CENTER>
+            <TABLE WIDTH="527" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+              <TR><TD>
+                <FONT SIZE="+1" FACE="Arial, Helvetica, sans-serif">
+                  {% for painting in paintings %}
+                    <P ALIGN="center">
+                      <A HREF="/{{pool_name}}/{{gallery.url_fragment()}}/{{painting.url_fragment()}}">
+                        <B>{{painting.title}}</B>
+                      </A>
+                    </P>
+                    <P ALIGN="center">
+                      <A HREF="/{{pool_name}}/{{gallery.url_fragment()}}/{{painting.url_fragment()}}">
+                        <IMG SRC="{{painting.thumbnail_image()}}"">
+                      </A>
+                    </P>
+                    <P>&nbsp;</P>
+                  {% endfor %}
+  	            </FONT>
+  	          </TD></TR>
+            </TABLE>
+          </CENTER></DIV>
+          <P ALIGN="CENTER">
+            <FONT SIZE="2" FACE="Arial, Helvetica, sans-serif">
+              ALL IMAGES COPYRIGHT {{year}} BY TIM MURLEY
+            </FONT>
+          </P>
+          <P ALIGN="CENTER">
+            <FONT SIZE="2" FACE="Arial, Helvetica, sans-serif">
+              Please note that the color intensity and value viewed on this web page 
+              may not translate fully from the original artwork.
+            </FONT>
+          </P>
+          <BR>
+        </TD></TR>
+      </TABLE>
+    </CENTER>
+  </DIV>
+{% endblock %}

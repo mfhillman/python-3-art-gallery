@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% if title_extension %}
+    <title>The Art of Tim Murley - {{title_extension}}</title>
+    {% else %}
+    <title>The Art of Tim Murley</title>
+    {% endif %}
+    <link rel="stylesheet" type="text/css" href="/static/css/gallery.css" />
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
+    {% block headerstuff  %}{% endblock %}
+</head>
+  
+  <body>
+    {% if header %} 
+      <div align="center">
+        <center>
+          <table WIDTH="527" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+            <tr>
+              {% if lefticon %}
+                <td><img src="/static/images/{{lefticon}}.jpg" WIDTH="125" HEIGHT="200"></td>
+              {% else %}
+                <td WIDTH="125" HEIGHT="200" />
+              {% endif %}
+              <td>
+                <p align="center"><font size="6" face="Franklin Gothic Heavy"><strong>
+                  Tim Murley
+                </strong></font><br>
+                <b><font size="5" face="Franklin Gothic Heavy">
+                  Recent Works
+                </font></b></font></p>
+              <table WIDTH="275" BORDER="0" CELLSPACING="0" CELLPADDING="0" HEIGHT="37">
+                <tr>
+                  <td WIDTH="25%"><p align="center"><a href="/galleries"><font face="Arial, Helvetica, sans-serif">Gallery</font></a></p></td>
+                  <td WIDTH="25%"><p align="center"><a href="/mission"><font face="Arial, Helvetica, sans-serif">Mission</font></a></p></td>
+                  <td WIDTH="25%"><p align="center"><a href="/resume"><font face="Arial, Helvetica, sans-serif">Resumé</font></a></p></td>
+                  <td WIDTH="25%"><p align="center"><a href="mailto:timmurleyart@gmail.com"><font face="Arial, Helvetica, sans-serif">E-mail</font></a></p></td>
+                </tr>
+              </table>
+              </td>
+              {% if righticon %}
+                <td><img src="/static/images/{{righticon}}.jpg" WIDTH="125" HEIGHT="200"></td>
+              {% else %}
+                <td WIDTH="125" HEIGHT="200" />
+              {% endif %}
+            </tr>
+          </table>
+        </center>
+      </div>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+	
+	  {% if footer %}
+      <div align="center">
+        <center>
+          <table WIDTH="527" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+            <tr>
+              <td COLSPAN="2">
+              <p align="center">
+                <font face="Arial, Helvetica, sans-serif">
+                  TIM MURLEY</font>
+                <font face="Arial, Helvetica, sans-serif"><br><b>
+                  RECENT WORKS</b></font>
+              </p>
+              <div align="center"><center><table WIDTH="450" BORDER="0" CELLSPACING="2" CELLPADDING="0">
+                <tr>
+                  <td WIDTH="25%"><p align="center"><a href="/galleries"><font face="Arial, Helvetica, sans-serif">Gallery</font></a></p></td>
+                  <td WIDTH="25%"><p align="center"><a href="/mission"><font face="Arial, Helvetica, sans-serif">Mission</font></a></p></td>
+                  <td WIDTH="25%"><p align="center"><a href="/resume"><font face="Arial, Helvetica, sans-serif">Resumé</font></a></p></td>
+                  <td WIDTH="25%"><p align="center"><a href="mailto:timmurleyart@gmail.com"><font face="Arial, Helvetica, sans-serif">E-mail</font></a></p></td>
+                </tr>
+              </table>
+              </center></div></td>
+            </tr>
+          </table>
+          
+          <div>
+            <a class = "smicon" href="https://twitter.com/timmurleyart">
+              <img title="Twitter" alt="Twitter" src="https://socialmediawidgets.files.wordpress.com/2014/03/01_twitter.png" width="35" height="35" />
+            </a>
+            <a class = "smicon" href="https://www.instagram.com/timmurleyart">
+              <img title="Instagram" alt="Instagram" src="https://socialmediawidgets.files.wordpress.com/2014/03/10_instagram.png" width="35" height="35" />
+            </a>
+            <a class = "smicon" href="https://www.facebook.com/timmurleyart">
+              <img title="Facebook" alt="Facebook" src="https://socialmediawidgets.files.wordpress.com/2014/03/02_facebook.png" width="35" height="35" />
+            </a>
+            <a class = "smicon" href="https://www.pinterest.com/timmurleyart">
+              <img title="Pinterest" alt="Pinterest" src="https://socialmediawidgets.files.wordpress.com/2014/03/13_pinterest.png" width="35" height="35" />
+            </a>
+            <a class = "smicon" href="https://timmurleyart.tumblr.com">
+              <img title="Tumblr" alt="Tumblr" src="https://socialmediawidgets.files.wordpress.com/2014/03/15_tumblr.png" width="35" height="35" />
+            </a>
+          </div>
+          
+        </center>
+      </div>
+    {% endif %}
+    
+  </body>
+</html>

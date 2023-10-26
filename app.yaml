@@ -1,0 +1,23 @@
+# This file specifies your Python application's runtime configuration
+# including URL routing, static file uploads, etc. See
+# https://developers.google.com/appengine/docs/python/config/appconfig
+# for details.
+
+runtime: python311
+
+# Handlers define how to route requests to your application.
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /admin/.*
+  script: main.app
+  login: admin
+  
+- url: /admin
+  script: main.app
+  login: admin
+  
+- url: /.*   # This regex directs all routes to main.app
+  script: main.app

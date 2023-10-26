@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% set header = True %}
+{% set footer = True %}
+{% set title_extension = painting.title %}
+
+{% block content %}
+  <DIV ALIGN="center"><CENTER>
+    <TABLE WIDTH="527" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+      <TR><TD COLSPAN="2">
+        <P ALIGN="center">
+          <IMG SRC="{{painting.full_size_image()}}" NATURALSIZEFLAG="3">
+        </P>
+        <DIV ALIGN="center"><CENTER>
+          <TABLE WIDTH="450" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+            <TR>
+              <TD WIDTH="154"><P ALIGN="center"><FONT SIZE="+1" FACE="Arial, Helvetica, sans-serif">{{painting.title}}</FONT></P></TD>
+              <TD WIDTH="143"><P ALIGN="center"><FONT SIZE="+1" FACE="Arial, Helvetica, sans-serif">&nbsp;{{painting.height}} X {{painting.width}}</FONT></P></TD>
+              <TD WIDTH="153"><P ALIGN="center"><FONT SIZE="+1" FACE="Arial, Helvetica, sans-serif">&nbsp;<A HREF="/{{pool_name}}/{{gallery_url_fragment}}">Back</A></FONT></P></TD>
+            </TR>
+          </TABLE>
+        </CENTER></DIV>
+      </TD></TR>
+    </TABLE>
+  </CENTER></DIV>
+{% endblock %}

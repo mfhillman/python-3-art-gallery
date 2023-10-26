@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+body {
+    background-color: #000000;
+    color: #c0c0c0;
+}
+
+a {
+    color: #c0c0c0;
+}
+
+a.smicon {
+    color: #000000;
+}
